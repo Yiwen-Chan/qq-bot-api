@@ -222,7 +222,7 @@ type SetChatMemberTitleConfig struct {
 
 // method returns CQ HTTP API method name for setting title.
 func (config SetChatMemberTitleConfig) method() string {
-	return "set_group_card"
+	return "set_group_special_title"
 }
 
 // values returns url.Values representation of SetChatMemberTitleConfig.
