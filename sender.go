@@ -1,7 +1,7 @@
 package qqbotapi
 
 import (
-	"github.com/catsworld/qq-bot-api/cqcode"
+	"github.com/Yiwen-Chan/qq-bot-api/cqcode"
 	"net/url"
 )
 
