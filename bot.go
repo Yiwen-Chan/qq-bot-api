@@ -9,7 +9,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/catsworld/qq-bot-api/cqcode"
+	"github.com/Yiwen-Chan/qq-bot-api/cqcode"
 	"github.com/mitchellh/mapstructure"
 	"golang.org/x/net/websocket"
 	"io"
