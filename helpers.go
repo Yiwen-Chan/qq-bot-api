@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"github.com/catsworld/qq-bot-api/cqcode"
+	"github.com/Yiwen-Chan/qq-bot-api/cqcode"
 	"io"
 	"io/ioutil"
 	"net/url"
