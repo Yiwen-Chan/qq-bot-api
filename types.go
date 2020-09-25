@@ -38,12 +38,13 @@ type Update struct {
 	Event         string      `json:"event"`
 	NoticeType    string      `json:"notice_type"` // This field is deprecated and will get removed, see #11
 	OperatorID    int64       `json:"operator_id"`
+	TargetID      int64       `json:"target_id"`
 	File          *File       `json:"file"`
 	RequestType   string      `json:"request_type"`
 	Flag          string      `json:"flag"`
 	Comment       string      `json:"comment"` // This field is used for Request Event
-	Text          string      `json:"-"` // Message with CQCode
-	Message       *Message    `json:"-"` // Message parsed
+	Text          string      `json:"-"`       // Message with CQCode
+	Message       *Message    `json:"-"`       // Message parsed
 	Sender        *User       `json:"sender"`
 }
 
@@ -84,6 +85,12 @@ type User struct {
 type Group struct {
 	ID   int64  `json:"group_id"`
 	Name string `json:"group_name"`
+}
+
+// BotInfo is a bot info on QQ.
+type BotInfo struct {
+	ID   int64  `json:"user_id"`
+	Name string `json:"nickname"`
 }
 
 // String displays a simple text version of a user.

@@ -351,6 +351,21 @@ func (bot *BotAPI) GetGroupList() ([]Group, error) {
 	return groups, nil
 }
 
+// GetLoginInfo get login info of the bot
+func (bot *BotAPI) GetLoginInfo() (BotInfo, error) {
+	v := url.Values{}
+	resp, err := bot.MakeRequest("get_login_info", v)
+	if err != nil {
+		return BotInfo{}, err
+	}
+	var bot_info BotInfo
+	json.Unmarshal(resp.Data, &bot_info)
+
+	bot.debugLog("GetLoginInfo", nil, bot_info)
+
+	return bot_info, nil
+}
+
 // IsMessageToMe returns true if message directed to this bot.
 //
 // It requires the Message.
@@ -595,7 +610,7 @@ func (bot *BotAPI) ListenForWebSocket(config WebhookConfig) UpdatesChannel {
 			}
 			return nil
 		},
-		Handler:   func(ws *websocket.Conn) {
+		Handler: func(ws *websocket.Conn) {
 			connectionClose := make(chan bool)
 
 			go func() {
